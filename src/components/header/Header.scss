@@ -1,6 +1,7 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 350px;
+  column-gap: 10px;
   padding: 20px;
   background: #FFFFFF;
   box-shadow: 0px 4px 6px #CAD6F3;
@@ -17,6 +18,11 @@
       grid-template-rows: repeat(2, 1fr);
       justify-items: center;
       align-self: center;
+
+      .element {
+        font-weight: 500;
+        color: #A790C6;
+      }
     }
   }
 

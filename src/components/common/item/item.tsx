@@ -1,6 +1,5 @@
 import { Button } from 'react-bootstrap';
 import { CurrencyType } from '../../../api/Api';
-import { MoneyType } from '../../app/App';
 import './Item.scss';
 
 type ItemPropsType = {

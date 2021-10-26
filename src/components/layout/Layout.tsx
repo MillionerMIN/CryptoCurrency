@@ -20,7 +20,7 @@ export const Layout = () => {
         <Main data={currency} />
       </div>
       <div className="col-8">
-        <Page />
+        <Page data={currency} />
       </div>
     </div>
   );
