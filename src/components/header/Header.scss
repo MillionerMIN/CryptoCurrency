@@ -24,6 +24,7 @@
     display: grid;
     grid-template-columns: 1fr 90px;
     grid-template-rows: 1fr 1fr;
+    align-items: center;
 
     .avatar {
       width: 100%;
