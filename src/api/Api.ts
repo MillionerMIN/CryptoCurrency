@@ -1,17 +1,15 @@
 import axios from "axios";
+import JsonData from '../data.json';
 
 const instance = axios.create({
-  baseURL: 'http://api.coincap.io/',
-
-  headers: {
-    'API-KEY': 'faeeaf7f-6f82-49c9-a88b-32cffe70c772'
-  }
+  baseURL: 'https://api.coincap.io/',
 })
 
 //API
 export const currencyAPI = {
   getCurrencyList() {
     const promise = instance.get<CurrencyListType>('v2/assets')
+    // const promise = instance.get<CurrencyListType>(JsonData[data])
     return promise;
   }
 }
@@ -33,5 +31,6 @@ export type CurrencyType = {
 
 export type CurrencyListType = {
   data: CurrencyType[]
+  timestamp: number
 }
 

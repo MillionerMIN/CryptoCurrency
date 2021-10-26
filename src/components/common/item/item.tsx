@@ -1,21 +1,21 @@
 import { Button } from 'react-bootstrap';
+import { CurrencyType } from '../../../api/Api';
 import { MoneyType } from '../../app/App';
 import './Item.scss';
 
 type ItemPropsType = {
   key: string;
-  data: MoneyType;
+  data: CurrencyType;
 };
 
 export const Item = (props: ItemPropsType) => {
-  const { img, name, desc } = props.data;
+  const { symbol, name, priceUsd } = props.data;
+  const cost = +priceUsd;
   return (
     <div className="item">
-      <div className="item-image">
-        <img src={img} alt="" />
-      </div>
+      <div className="symbol">{symbol}</div>
       <div className="text">{name}</div>
-      <div className="cost">{desc}</div>
+      <div className="cost">{cost.toFixed(2)}</div>
       <Button variant="outline-success">+</Button>
     </div>
   );

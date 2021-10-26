@@ -1,15 +1,32 @@
-import { MoneyType } from '../app/App';
+import { useState } from 'react';
+import { CurrencyType } from '../../api/Api';
 import { Item } from '../common/item/item';
+import { Paginate } from '../common/paginate/Paginate';
 import './Main.scss';
 
 type MainPropsType = {
-  data: MoneyType[];
+  data: CurrencyType[];
 };
 
 export const Main = (props: MainPropsType) => {
-  const element = props.data.map((item) => (
-    <Item key={item.name} data={item} />
+  const { data } = props;
+
+  const currencyTotalCount = data.length;
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const counterPerPage = 10;
+
+  const lastCurrencyIndex = currentPage * counterPerPage;
+  const firstCurrencyIndex = lastCurrencyIndex - counterPerPage;
+  const currentElement = data.slice(firstCurrencyIndex, lastCurrencyIndex);
+
+  const onPageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const element = currentElement.map((item) => (
+    <Item key={item.id} data={item} />
   ));
+
   return (
     <section className="main">
       <div className="main-logo">
@@ -19,6 +36,12 @@ export const Main = (props: MainPropsType) => {
         <h1>Crypto-wallet</h1>
       </div>
       <div className="items">{element}</div>
+      <Paginate
+        totalCount={currencyTotalCount}
+        pageSize={counterPerPage}
+        currentPage={currentPage}
+        onPageChange={onPageChange}
+      />
     </section>
   );
 };
