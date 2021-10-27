@@ -1,26 +1,30 @@
 import { useEffect, useState } from 'react';
-import { currencyAPI, CurrencyType } from '../../api/Api';
+import { useDispatch, useSelector } from 'react-redux';
+import { CurrencyType } from '../../api/Api';
+import { setCurrencyListTC } from '../../redux/currencyList-reducer';
+import { AppRootStateType } from '../../redux/store';
 import { Main } from '../main/Main';
 import { Page } from '../page/Page';
 // import JsonData from '../../data.json';
 import './Layout.scss';
 
 export const Layout = () => {
-  const [currency, setCurrency] = useState<CurrencyType[]>([]);
+  const currencyList = useSelector<AppRootStateType, CurrencyType[]>(
+    (store) => store.currencyList.currency
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    currencyAPI.getCurrencyList().then((res) => {
-      setCurrency(res.data.data);
-    });
-  }, []);
+    dispatch(setCurrencyListTC());
+  }, [dispatch]);
 
   return (
     <div className="row layout">
       <div className="col-4">
-        <Main data={currency} />
+        <Main data={currencyList} />
       </div>
       <div className="col-8">
-        <Page data={currency} />
+        <Page data={currencyList} />
       </div>
     </div>
   );

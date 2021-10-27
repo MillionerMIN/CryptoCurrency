@@ -9,6 +9,10 @@ export const currencyAPI = {
   getCurrencyList() {
     const promise = instance.get<CurrencyListType>('v2/assets')
     return promise;
+  },
+  getCurrencyHistory(id: string) {
+    const promise = instance.get(`/assets/${id}/history/interval=d1`);
+    return promise;
   }
 }
 
@@ -25,6 +29,17 @@ export type CurrencyType = {
   priceUsd: string
   changePercent24Hr: string
   vwap24Hr: string
+}
+
+export type CurrencyHistoryType = {
+  priceUsd: string,
+  time: number
+  date: string
+}
+
+export type CurrencyHistoryListType = {
+  data: CurrencyHistoryType[]
+  timestamp: number
 }
 
 export type CurrencyListType = {

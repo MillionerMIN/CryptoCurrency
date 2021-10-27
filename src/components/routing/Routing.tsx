@@ -7,7 +7,7 @@ export const Routing = () => {
   return (
     <>
       <Switch>
-        <Route exact path={'/assets'} render={() => <Layout />} />
+        <Route exact path={'/'} render={() => <Layout />} />
         <Route path={'/404'} render={() => <NotFound />} />
         <Route path={'/assets/:id'} render={() => <Information />} />
       </Switch>
