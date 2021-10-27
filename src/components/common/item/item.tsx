@@ -3,7 +3,6 @@ import { CurrencyType } from '../../../api/Api';
 import './Item.scss';
 
 type ItemPropsType = {
-  key: string;
   data: CurrencyType;
 };
 

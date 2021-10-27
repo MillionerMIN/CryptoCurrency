@@ -20,6 +20,10 @@
   .items {
     display: grid;
     justify-content: center;
+
+    .link {
+      text-decoration: none;
+    }
   }
 
 }

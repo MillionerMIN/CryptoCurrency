@@ -16,7 +16,7 @@ export const Layout = () => {
 
   return (
     <div className="row layout">
-      <div className="col-4 border">
+      <div className="col-4">
         <Main data={currency} />
       </div>
       <div className="col-8">
