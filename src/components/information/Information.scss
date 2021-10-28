@@ -1,0 +1,25 @@
+.information {
+  margin: 20px 0;
+  padding: 15px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px #CAD6F3;
+  border-radius: 20px;
+
+  &_panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+
+    .link {
+      text-decoration: none;
+    }
+  }
+
+  &_barChart {
+    padding: 20px 30px;
+    height: 100%;
+    background: rgba(249, 250, 253, 0.5);
+    box-shadow: inset 0px 0px 8px 1px rgba(202, 214, 243, 0.6);
+    border-radius: 20px;
+  }
+}

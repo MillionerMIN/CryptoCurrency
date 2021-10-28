@@ -1,8 +1,9 @@
-import { currencyAPI, CurrencyType } from '../api/Api';
-import { Dispatch } from 'redux'
+import { currencyAPI, CurrencyHistoryType, CurrencyType } from '../api/Api';
+import { Dispatch } from 'redux';
 
 const initialState = {
   currency: [] as CurrencyType[],
+  chartHistory: [] as CurrencyHistoryType[],
 };
 
 export const currencyListReducer = (
@@ -12,6 +13,8 @@ export const currencyListReducer = (
   switch (action.type) {
     case 'SET-CURRENCY':
       return { ...state, currency: action.currencyList };
+    case 'GET-HISTORY':
+      return { ...state, chartHistory: action.chartHistory };
 
     default:
       return state;
@@ -20,16 +23,26 @@ export const currencyListReducer = (
 //actions
 export const getCurrencyAC = (currencyList: CurrencyType[]) =>
   ({ type: 'SET-CURRENCY', currencyList } as const);
+export const getHistoryAC = (chartHistory: CurrencyHistoryType[]) =>
+  ({ type: 'GET-HISTORY', chartHistory } as const);
 
 //Thunks
 
 export const setCurrencyListTC = () => (dispatch: Dispatch<ActionsType>) => {
-  currencyAPI.getCurrencyList()
+  currencyAPI.getCurrencyList().then((res) => {
+    dispatch(getCurrencyAC(res.data.data));
+  });
+};
+
+export const setCurrencyHistoryTC = (id: string) => (dispatch: Dispatch<ActionsType>) => {
+  currencyAPI.getCurrencyHistory(id)
     .then((res) => {
-      dispatch(getCurrencyAC(res.data.data))
-    })
+      dispatch(getHistoryAC(res.data.data));
+    });
 }
 
 type InitialStateType = typeof initialState;
 
-type ActionsType = ReturnType<typeof getCurrencyAC>;
+type ActionsType =
+  | ReturnType<typeof getCurrencyAC>
+  | ReturnType<typeof getHistoryAC>;

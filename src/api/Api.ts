@@ -11,7 +11,7 @@ export const currencyAPI = {
     return promise;
   },
   getCurrencyHistory(id: string) {
-    const promise = instance.get(`/assets/${id}/history/interval=d1`);
+    const promise = instance.get<CurrencyHistoryListType>(`v2/assets/${id}/history?interval=d1`);
     return promise;
   }
 }

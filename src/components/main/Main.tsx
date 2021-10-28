@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { CurrencyType } from '../../api/Api';
 import { Item } from '../common/item/Item';
 
@@ -26,9 +25,7 @@ export const Main = (props: MainPropsType) => {
   };
 
   const element = currentElement.map((item) => (
-    <Link className="link" key={item.id} to={`/assets/${item.id}`}>
-      <Item data={item} />
-    </Link>
+    <Item key={item.id} data={item} />
   ));
 
   return (

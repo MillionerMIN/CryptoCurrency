@@ -1,12 +1,22 @@
 import { Line } from 'react-chartjs-2';
+import { CurrencyHistoryType } from '../../../api/Api';
 
-export const BarChart = () => {
+type BarChartPropsType = {
+  id: string;
+  infoData: CurrencyHistoryType[];
+};
+
+export const BarChart = (props: BarChartPropsType) => {
+  const { id, infoData } = props;
+  const arrDate = infoData.map((i) => i.date.slice(0, 10));
+  const arrPriseUsd = infoData.map((i) => i.priceUsd);
+
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May'],
+    labels: arrDate,
     datasets: [
       {
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40],
+        label: id.toUpperCase(),
+        data: arrPriseUsd,
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1,

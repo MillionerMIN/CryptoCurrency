@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CurrencyType } from '../../api/Api';
 import { setCurrencyListTC } from '../../redux/currencyList-reducer';
@@ -16,6 +16,7 @@ export const Layout = () => {
 
   useEffect(() => {
     dispatch(setCurrencyListTC());
+
   }, [dispatch]);
 
   return (

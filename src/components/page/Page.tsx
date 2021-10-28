@@ -13,7 +13,6 @@ export const Page = (props: PagePropsType) => {
   return (
     <section className="page">
       <Header data={data} />
-      <BarChart />
     </section>
   );
 };
