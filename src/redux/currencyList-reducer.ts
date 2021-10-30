@@ -15,10 +15,9 @@ export const currencyListReducer = (
       return { ...state, currency: action.currencyList };
     case 'GET-HISTORY':
       return { ...state, chartHistory: action.chartHistory };
-
     default:
       return state;
-  } 
+  }
 };
 //actions
 export const getCurrencyAC = (currencyList: CurrencyType[]) =>

@@ -7,8 +7,8 @@ export const walletReducer = (state: InitialWalletStateType = initialWalletState
 
   switch (action.type) {
     case 'ADD-CRYPTO': {
-      const asset = state.wallet.find(item => item.id === action.amout.id);
-      if (asset) {
+      const addAsset = state.wallet.find(item => item.id === action.amout.id);
+      if (addAsset) {
         state.wallet.map(item => {
           if (item.id === action.amout.id) {
             item.resultUsd = String(Number(item.resultUsd) + Number(action.amout.resultUsd));
@@ -19,8 +19,18 @@ export const walletReducer = (state: InitialWalletStateType = initialWalletState
       return { ...state, wallet: [...state.wallet, action.amout] }
     }
 
-    case 'REMOVE-CRYPTO':
+    case 'REMOVE-CRYPTO': {
+      const removeAsset = state.wallet.find(item => item.id === action.amout.id);
+      if (removeAsset) {
+        state.wallet.map(item => {
+          if (item.id === action.amout.id) {
+            item.resultUsd = String(Number(item.resultUsd) - Number(action.amout.resultUsd))
+          }
+        })
+        return { ...state, wallet: [...state.wallet] }
+      }
       return { ...state, wallet: [...state.wallet, action.amout] }
+    }
     case 'COST-WALLET': {
       const costWallet = state.wallet.reduce((sum, current) => sum + +current.resultUsd, 10)
       return {

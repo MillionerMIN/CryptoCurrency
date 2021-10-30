@@ -7,7 +7,7 @@ import './ModalWindow.scss';
 type ModalWindowPropsType = {
   data: CurrencyType;
   handleClose: () => void;
-  changeHandler: (numberCur: number) => void;
+  changeHandler: (numberCur: number, value: string) => void;
 };
 
 export const ModalWindow = (props: ModalWindowPropsType) => {
@@ -15,7 +15,10 @@ export const ModalWindow = (props: ModalWindowPropsType) => {
   const { id, priceUsd } = props.data;
   const [cur, setCur] = useState<number>(0);
 
-  const onAddAssetsHandler = () => cur !== 0 && changeHandler(cur);
+  const onAddAssetsHandler = (value: string) =>
+    cur !== 0 && changeHandler(cur, value);
+  const onRemoveAssetsHandler = (value: string) =>
+    cur !== 0 && changeHandler(cur, value);
 
   const onChangeValueInput = (e: ChangeEvent<HTMLInputElement>) => {
     setCur(+e.currentTarget.value);
@@ -42,8 +45,14 @@ export const ModalWindow = (props: ModalWindowPropsType) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={onAddAssetsHandler}>
-            Save Changes
+          <Button
+            variant="primary"
+            onClick={() => onRemoveAssetsHandler('sale')}
+          >
+            Sale
+          </Button>
+          <Button variant="primary" onClick={() => onAddAssetsHandler('buy')}>
+            Buy
           </Button>
         </Modal.Footer>
       </Modal>
