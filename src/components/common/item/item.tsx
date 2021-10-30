@@ -5,7 +5,11 @@ import { ModalWindow } from '../modal/ModalWindow';
 import './Item.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCrypto, removeCrypto } from '../../../redux/wallet-reducer';
+import {
+  addCrypto,
+  costWallet,
+  removeCrypto,
+} from '../../../redux/wallet-reducer';
 
 type ItemPropsType = {
   data: CurrencyType;
@@ -27,8 +31,8 @@ export const Item = (props: ItemPropsType) => {
   const onChangeHandler = (numberCur: number, value: string) => {
     const newCur = {
       id: id,
-      name: id,
-      resultUsd: String(+numberCur * +priceUsd),
+      count: numberCur,
+      resultUsd: numberCur * +priceUsd,
     };
     if (value === 'buy') {
       dispatch(addCrypto(newCur));

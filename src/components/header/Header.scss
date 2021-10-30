@@ -8,7 +8,7 @@
   border-radius: 20px;
   color: #323232;
 
-  .money {
+  &__money {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
@@ -27,7 +27,7 @@
     }
   }
 
-  .profile {
+  &__profile {
     display: grid;
     grid-template-columns: 1fr 62px;
     grid-template-rows: 1fr 1fr;

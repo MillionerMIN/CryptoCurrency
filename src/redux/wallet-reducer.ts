@@ -1,6 +1,7 @@
 const initialWalletState = {
   wallet: [] as CurrencyWalletType[],
-  costWallet: ''
+  costWallet: 0,
+  sessionCostWallet: 0,
 }
 
 export const walletReducer = (state: InitialWalletStateType = initialWalletState, action: ActionsType): InitialWalletStateType => {
@@ -11,12 +12,13 @@ export const walletReducer = (state: InitialWalletStateType = initialWalletState
       if (addAsset) {
         state.wallet.map(item => {
           if (item.id === action.amout.id) {
-            item.resultUsd = String(Number(item.resultUsd) + Number(action.amout.resultUsd));
+            item.resultUsd = item.resultUsd + action.amout.resultUsd;
+            item.count = item.count + action.amout.count;
           }
         })
-        return { ...state, wallet: [...state.wallet] }
+        return { ...state, wallet: [...state.wallet], costWallet: state.costWallet + action.amout.resultUsd, sessionCostWallet: action.amout.resultUsd }
       }
-      return { ...state, wallet: [...state.wallet, action.amout] }
+      return { ...state, wallet: [...state.wallet, action.amout], costWallet: state.costWallet + action.amout.resultUsd, sessionCostWallet: action.amout.resultUsd }
     }
 
     case 'REMOVE-CRYPTO': {
@@ -24,24 +26,23 @@ export const walletReducer = (state: InitialWalletStateType = initialWalletState
       if (removeAsset) {
         state.wallet.map(item => {
           if (item.id === action.amout.id) {
-            item.resultUsd = String(Number(item.resultUsd) - Number(action.amout.resultUsd))
+            item.resultUsd = item.resultUsd < action.amout.resultUsd ? item.resultUsd - item.resultUsd : item.resultUsd - action.amout.resultUsd
+            item.count = item.count < action.amout.count ? item.count - item.count : item.count - action.amout.count;
           }
         })
-        return { ...state, wallet: [...state.wallet] }
+        return { ...state, wallet: [...state.wallet], costWallet: state.costWallet < action.amout.resultUsd ? state.costWallet - state.costWallet : state.costWallet - action.amout.resultUsd, sessionCostWallet: action.amout.resultUsd }
       }
-      return { ...state, wallet: [...state.wallet, action.amout] }
+      return { ...state, wallet: [...state.wallet, action.amout], costWallet: state.costWallet < action.amout.resultUsd ? state.costWallet - state.costWallet : state.costWallet - action.amout.resultUsd, sessionCostWallet: action.amout.resultUsd }
     }
     case 'COST-WALLET': {
-      const costWallet = state.wallet.reduce((sum, current) => sum + +current.resultUsd, 10)
       return {
-        ...state, costWallet: String(costWallet)
+        ...state
       }
     }
     default:
       return state;
   }
 }
-
 
 //action
 export const addCrypto = (amout: CurrencyWalletType) => ({ type: 'ADD-CRYPTO', amout } as const)
@@ -52,9 +53,9 @@ export const costWallet = (sum: string) => ({ type: 'COST-WALLET', sum } as cons
 //Type
 export type CurrencyWalletType = {
   id: string
-  name: string
-  resultUsd: string
+  count: number
+  resultUsd: number
 }
-type InitialWalletStateType = typeof initialWalletState
+export type InitialWalletStateType = typeof initialWalletState
 
 type ActionsType = ReturnType<typeof addCrypto> | ReturnType<typeof removeCrypto> | ReturnType<typeof costWallet> 

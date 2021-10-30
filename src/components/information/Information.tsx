@@ -10,22 +10,17 @@ import {
 } from '../../redux/currencyList-reducer';
 import { AppRootStateType } from '../../redux/store';
 import { BarChart } from '../common/barChart/BarChart';
-import { ModalWindow } from '../common/modal/ModalWindow';
 import ChevronLeft from '../../icons/parts/chevron-left.svg';
 
 import './Information.scss';
-import { addCrypto } from '../../redux/wallet-reducer';
 
 export const Information = () => {
-  const currencyList = useSelector<AppRootStateType, CurrencyType[]>(
-    (store) => store.currencyList.currency
-  );
   const info = useSelector<AppRootStateType, CurrencyHistoryType[]>(
     (store) => store.currencyList.chartHistory
   );
   const [show, setShow] = useState(false);
   const { id } = useParams<{ id: string }>();
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,10 +29,6 @@ export const Information = () => {
   }, [dispatch, id]);
 
   const onAddCurrency = () => {
-    setShow(!show);
-  };
-
-  const onShowCloseModal = () => {
     setShow(!show);
   };
 
@@ -62,16 +53,6 @@ export const Information = () => {
             </span>
           </Link>
         </div>
-        <Button variant="outline-success" onClick={onAddCurrency}>
-          add
-        </Button>
-        {/* {show && (
-          <ModalWindow
-            handleClose={onShowCloseModal}
-            changeHandler={onChangeHandler}
-            data={}
-          />
-        )} */}
       </div>
 
       <div className="information_barChart">
