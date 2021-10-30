@@ -1,0 +1,14 @@
+.history {
+  height: 80vh;
+  background: #FFFFFF;
+  box-shadow: 1px 4px 6px #CAD6F3;
+  border-radius: 20px;
+  padding: 20px;
+
+  &__title {
+    padding-left: 30px;
+    font-size: 40px;
+    // line-height: 70px;
+    color: #000000;
+  }
+}

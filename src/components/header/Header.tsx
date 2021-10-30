@@ -1,4 +1,9 @@
+import { useSelector } from 'react-redux';
 import { CurrencyType } from '../../api/Api';
+import Ava from '../../icons/person/avatar.svg';
+import { getCostWallet } from '../../redux/selectots';
+import { AppRootStateType } from '../../redux/store';
+
 import './Header.scss';
 
 type HeaderPropsType = {
@@ -7,16 +12,18 @@ type HeaderPropsType = {
 
 export const Header = (props: HeaderPropsType) => {
   const { data } = props;
+  const costWallet = useSelector<AppRootStateType, string>(getCostWallet);
+  
 
   const newData = data.filter((item) => +item.rank <= 3);
 
   const el = newData.map((el) => {
-    const fix = +el.priceUsd;
+    const fix = (+el.priceUsd).toFixed(2);
 
     return (
       <div key={el.id}>
         <span className="element">{el.name}</span>
-        <span>{fix.toFixed(2)}</span>
+        <span>{fix}</span>
       </div>
     );
   });
@@ -25,11 +32,11 @@ export const Header = (props: HeaderPropsType) => {
     <section className="header">
       <div className="money">{el}</div>
       <div className="profile">
-        <h4>profile@gmail.com</h4>
+        <span>profile@gmail.com</span>
         <div className="avatar">
-          <img src="../../icons/money/bitcoin-btc-logo.svg" alt="" />
+          <img src={Ava} alt="ava" />
         </div>
-        <div className="targets">134,32 USD +2,38 (1,80 %)</div>
+        <div className="targets">{costWallet}USD +2,38 (1,80 %)</div>
       </div>
     </section>
   );

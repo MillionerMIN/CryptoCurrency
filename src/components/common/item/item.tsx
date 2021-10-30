@@ -4,6 +4,8 @@ import { CurrencyType } from '../../../api/Api';
 import { ModalWindow } from '../modal/ModalWindow';
 import './Item.scss';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCrypto } from '../../../redux/wallet-reducer';
 
 type ItemPropsType = {
   data: CurrencyType;
@@ -17,7 +19,18 @@ export const Item = (props: ItemPropsType) => {
   const onInfoHandler = () => {
     return history.push(`/assets/${id}`);
   };
-  const onAddCurrency = () => {
+  const onShowCloseModal = () => {
+    setShow(!show);
+  };
+
+  const dispatch = useDispatch();
+  const onChangeHandler = (numberCur: number) => {
+    const newCur = {
+      id: id,
+      name: id,
+      resultUsd: String(+numberCur * +priceUsd),
+    };
+    dispatch(addCrypto(newCur));
     setShow(!show);
   };
 
@@ -28,10 +41,16 @@ export const Item = (props: ItemPropsType) => {
         <div className="text">{name}</div>
         <div className="cost">{cost.toFixed(2)}</div>
       </Link>
-      <Button variant="outline-success" onClick={onAddCurrency}>
+      <Button variant="outline-success" onClick={onShowCloseModal}>
         +
       </Button>
-      {show && <ModalWindow handleClose={onAddCurrency} />}
+      {show && (
+        <ModalWindow
+          handleClose={onShowCloseModal}
+          changeHandler={onChangeHandler}
+          data={props.data}
+        />
+      )}
     </div>
   );
 };

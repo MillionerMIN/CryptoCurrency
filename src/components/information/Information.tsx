@@ -3,24 +3,33 @@ import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CurrencyHistoryType } from '../../api/Api';
-import { setCurrencyHistoryTC } from '../../redux/currencyList-reducer';
+import { CurrencyHistoryType, CurrencyType } from '../../api/Api';
+import {
+  setCurrencyHistoryTC,
+  setCurrencyListTC,
+} from '../../redux/currencyList-reducer';
 import { AppRootStateType } from '../../redux/store';
 import { BarChart } from '../common/barChart/BarChart';
 import { ModalWindow } from '../common/modal/ModalWindow';
 import ChevronLeft from '../../icons/parts/chevron-left.svg';
 
 import './Information.scss';
+import { addCrypto } from '../../redux/wallet-reducer';
 
 export const Information = () => {
-  const [show, setShow] = useState(false);
-  const { id } = useParams<{ id: string }>();
+  const currencyList = useSelector<AppRootStateType, CurrencyType[]>(
+    (store) => store.currencyList.currency
+  );
   const info = useSelector<AppRootStateType, CurrencyHistoryType[]>(
     (store) => store.currencyList.chartHistory
   );
+  const [show, setShow] = useState(false);
+  const { id } = useParams<{ id: string }>();
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setCurrencyListTC());
     dispatch(setCurrencyHistoryTC(id));
   }, [dispatch, id]);
 
@@ -28,9 +37,19 @@ export const Information = () => {
     setShow(!show);
   };
 
-  const onHandleClose = () => {
+  const onShowCloseModal = () => {
     setShow(!show);
   };
+
+  // const onChangeHandler = (numberCur: number) => {
+  //   const newCur = {
+  //     id: id,
+  //     name: id,
+  //     resultUsd: String(+numberCur * +priceUsd),
+  //   };
+  //   dispatch(addCrypto(newCur));
+  //   setShow(!show);
+  // };
 
   return (
     <div className="row information">
@@ -46,7 +65,13 @@ export const Information = () => {
         <Button variant="outline-success" onClick={onAddCurrency}>
           add
         </Button>
-        {show && <ModalWindow handleClose={onHandleClose} />}
+        {/* {show && (
+          <ModalWindow
+            handleClose={onShowCloseModal}
+            changeHandler={onChangeHandler}
+            data={}
+          />
+        )} */}
       </div>
 
       <div className="information_barChart">

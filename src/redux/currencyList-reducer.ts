@@ -1,15 +1,15 @@
 import { currencyAPI, CurrencyHistoryType, CurrencyType } from '../api/Api';
 import { Dispatch } from 'redux';
 
-const initialState = {
+const initialCurrencyState = {
   currency: [] as CurrencyType[],
   chartHistory: [] as CurrencyHistoryType[],
 };
 
 export const currencyListReducer = (
-  state = initialState,
+  state = initialCurrencyState,
   action: ActionsType
-): InitialStateType => {
+): InitialCurrencyStateType => {
   switch (action.type) {
     case 'SET-CURRENCY':
       return { ...state, currency: action.currencyList };
@@ -18,7 +18,7 @@ export const currencyListReducer = (
 
     default:
       return state;
-  }
+  } 
 };
 //actions
 export const getCurrencyAC = (currencyList: CurrencyType[]) =>
@@ -41,7 +41,7 @@ export const setCurrencyHistoryTC = (id: string) => (dispatch: Dispatch<ActionsT
     });
 }
 
-type InitialStateType = typeof initialState;
+type InitialCurrencyStateType = typeof initialCurrencyState;
 
 type ActionsType =
   | ReturnType<typeof getCurrencyAC>

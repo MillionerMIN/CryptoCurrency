@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 1fr 340px;
   column-gap: 10px;
   padding: 20px;
   background: #FFFFFF;
@@ -29,9 +29,10 @@
 
   .profile {
     display: grid;
-    grid-template-columns: 1fr 90px;
+    grid-template-columns: 1fr 62px;
     grid-template-rows: 1fr 1fr;
     align-items: center;
+    justify-items: center;
 
     .avatar {
       width: 100%;

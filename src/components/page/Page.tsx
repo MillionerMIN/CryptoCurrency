@@ -2,6 +2,7 @@ import './Page.scss';
 import { Header } from '../header/Header';
 import { CurrencyType } from '../../api/Api';
 import { BarChart } from '../common/barChart/BarChart';
+import { History } from '../history/History';
 
 type PagePropsType = {
   data: CurrencyType[];
@@ -12,7 +13,10 @@ export const Page = (props: PagePropsType) => {
 
   return (
     <section className="page">
-      <Header data={data} />
+      <div className="page__wrapper">
+        <Header data={data} />
+        <History />
+      </div>
     </section>
   );
 };

@@ -4,4 +4,10 @@
   background: rgba(249, 250, 253, 0.5);
   box-shadow: inset 0px 0px 8px 1px rgba(202, 214, 243, 0.6);
   border-radius: 20px;
+
+  &__wrapper {
+    display: grid;
+    grid-auto-rows: auto;
+    row-gap: 20px;
+  }
 }
