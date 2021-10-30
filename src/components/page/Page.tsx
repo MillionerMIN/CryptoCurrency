@@ -1,7 +1,6 @@
 import './Page.scss';
 import { Header } from '../header/Header';
 import { CurrencyType } from '../../api/Api';
-import { BarChart } from '../common/barChart/BarChart';
 import { History } from '../history/History';
 
 type PagePropsType = {

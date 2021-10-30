@@ -1,7 +1,11 @@
 import { useSelector } from 'react-redux';
 import { CurrencyType } from '../../api/Api';
 import Ava from '../../icons/person/avatar.svg';
-import { getCostWallet, getSessionCostWallet } from '../../redux/selectots';
+import {
+  getCostWallet,
+  getPercentTransaction,
+  getSessionCostWallet,
+} from '../../redux/selectots';
 import { AppRootStateType } from '../../redux/store';
 
 import './Header.scss';
@@ -13,11 +17,11 @@ type HeaderPropsType = {
 export const Header = (props: HeaderPropsType) => {
   const { data } = props;
   const costWallet = useSelector<AppRootStateType, number>(getCostWallet);
-  // const cost = window.localStorage.wallet.costWallet;
   const sessionCostWallet = useSelector<AppRootStateType, number>(
     getSessionCostWallet
   );
-  // console.log(cost);
+  // percent transaction from cost wallet
+  const percent = useSelector<AppRootStateType, number>(getPercentTransaction);
 
   const newData = data.filter((item) => +item.rank <= 3);
 
@@ -37,11 +41,13 @@ export const Header = (props: HeaderPropsType) => {
       <div className="header__money">{el}</div>
       <div className="header__profile">
         <span>profile@gmail.com</span>
-        <div className="avatar">
+        <div className="header__profile__avatar">
           <img src={Ava} alt="ava" />
         </div>
-        <div className="targets">
-          {costWallet}USD +{sessionCostWallet} (1,80 %)
+        <div className="header__profile__targets">
+          <span>{costWallet} USD</span>
+          <span>{sessionCostWallet} USD</span>
+          <span>{percent} %</span>
         </div>
       </div>
     </section>

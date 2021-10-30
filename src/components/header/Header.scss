@@ -34,7 +34,7 @@
     align-items: center;
     justify-items: center;
 
-    .avatar {
+    &__avatar {
       width: 100%;
       grid-column-start: 2;
       grid-column-end: 3;
@@ -42,7 +42,9 @@
       grid-row-end: 3;
     }
 
-    .targets {
+    &__targets {
+      display: grid;
+      justify-items: center;
       color: #27AE60;
     }
   }

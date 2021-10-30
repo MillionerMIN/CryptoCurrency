@@ -18,13 +18,11 @@ if (persistedWalletString && persistedCostWalletString) {
     wallet: {
       wallet: JSON.parse(persistedWalletString),
       costWallet: JSON.parse(persistedCostWalletString),
-      sessionCostWallet: 0
+      sessionCostWallet: 0,
+      percentTransaction: 0,
     }
   }
 }
-
-console.log(preloadedState);
-
 
 export const store = createStore(rootReducer, preloadedState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
 

@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CurrencyHistoryType, CurrencyType } from '../../api/Api';
+import { CurrencyHistoryType } from '../../api/Api';
 import {
   setCurrencyHistoryTC,
   setCurrencyListTC,
@@ -18,20 +17,13 @@ export const Information = () => {
   const info = useSelector<AppRootStateType, CurrencyHistoryType[]>(
     (store) => store.currencyList.chartHistory
   );
-  const [show, setShow] = useState(false);
   const { id } = useParams<{ id: string }>();
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setCurrencyListTC());
     dispatch(setCurrencyHistoryTC(id));
   }, [dispatch, id]);
-
-  const onAddCurrency = () => {
-    setShow(!show);
-  };
-
   // const onChangeHandler = (numberCur: number) => {
   //   const newCur = {
   //     id: id,
@@ -54,7 +46,6 @@ export const Information = () => {
           </Link>
         </div>
       </div>
-
       <div className="information_barChart">
         <BarChart infoData={info} id={id} />
       </div>

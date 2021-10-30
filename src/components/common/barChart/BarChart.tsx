@@ -1,4 +1,4 @@
-import { Line } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import { CurrencyHistoryType } from '../../../api/Api';
 
 type BarChartPropsType = {
@@ -17,16 +17,27 @@ export const BarChart = (props: BarChartPropsType) => {
       {
         label: id.toUpperCase(),
         data: arrPriseUsd,
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1,
+        backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'],
+        borderWidth: 1,
       },
     ],
   };
 
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
+
   return (
-    <div>
-      <Line data={data} />
-    </div>
+    <>
+      <div className="chart">
+        
+        <Bar data={data} options={options} />
+      </div>
+    </>
   );
 };

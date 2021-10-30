@@ -6,3 +6,6 @@ export const getCostWallet = (state: AppRootStateType): number => {
 export const getSessionCostWallet = (state: AppRootStateType): number => {
   return state.wallet.sessionCostWallet
 }
+export const getPercentTransaction = (state: AppRootStateType): number => {
+  return state.wallet.percentTransaction
+}

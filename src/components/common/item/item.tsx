@@ -5,11 +5,7 @@ import { ModalWindow } from '../modal/ModalWindow';
 import './Item.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  addCrypto,
-  costWallet,
-  removeCrypto,
-} from '../../../redux/wallet-reducer';
+import { addCrypto, removeCrypto } from '../../../redux/wallet-reducer';
 
 type ItemPropsType = {
   data: CurrencyType;
