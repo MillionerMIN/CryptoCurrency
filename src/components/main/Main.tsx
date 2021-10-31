@@ -3,6 +3,7 @@ import { CurrencyType } from '../../api/Api';
 import { Item } from '../common/item/Item';
 
 import { Paginate } from '../common/paginate/Paginate';
+import Logo from '../../icons/digital-wallet.png';
 import './Main.scss';
 
 type MainPropsType = {
@@ -32,7 +33,7 @@ export const Main = (props: MainPropsType) => {
     <section className="main">
       <div className="main-logo">
         <div className="logo">
-          <img src="../../icons/digital-wallet.png" alt="Logo" />
+          <img src={Logo} alt="Logo" />
         </div>
         <h1>Crypto-wallet</h1>
       </div>
