@@ -1,4 +1,4 @@
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { CurrencyHistoryType } from '../../../api/Api';
 
 type BarChartPropsType = {
@@ -35,7 +35,6 @@ export const BarChart = (props: BarChartPropsType) => {
   return (
     <>
       <div className="chart">
-        
         <Bar data={data} options={options} />
       </div>
     </>

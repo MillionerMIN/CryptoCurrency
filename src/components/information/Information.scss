@@ -5,7 +5,7 @@
   box-shadow: 0px 4px 6px #CAD6F3;
   border-radius: 20px;
 
-  &_panel {
+  &__panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 20px;
@@ -15,7 +15,23 @@
     }
   }
 
-  &_barChart {
+  &__table {
+    table {
+      width: 100%;
+      text-align: center;
+      color: #6c757d;
+    }
+
+    .up {
+      color: #27AE60;
+    }
+
+    .down {
+      color: #EB5757;
+    }
+  }
+
+  &__barChart {
     padding: 20px 30px;
     height: 100%;
     background: rgba(249, 250, 253, 0.5);
