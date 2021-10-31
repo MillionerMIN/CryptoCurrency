@@ -5,7 +5,6 @@ import { setCurrencyListTC } from '../../redux/currencyList-reducer';
 import { AppRootStateType } from '../../redux/store';
 import { Main } from '../main/Main';
 import { Page } from '../page/Page';
-// import JsonData from '../../data.json';
 import './Layout.scss';
 
 export const Layout = () => {
