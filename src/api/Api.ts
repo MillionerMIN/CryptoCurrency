@@ -1,20 +1,26 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'https://api.coincap.io/',
+  baseURL: 'https://api.coincap.io/v2/',
 })
 
 //API
 export const currencyAPI = {
+  getStillCurrencyList() {
+    return instance.get<CurrencyListType>(`assets`)
+  },
   getCurrencyList(offset: number, perPage: number) {
-    const promise = instance.get<CurrencyListType>(`v2/assets?offset=${offset}&limit=${perPage}`)
+    const promise = instance.get<CurrencyListType>(`assets?offset=${offset}&limit=${perPage}`)
     return promise;
   },
   getCurrentCurrency(id: string) {
-    return instance.get<CurrencyType>(`v2/assets/${id}`)
+    return instance.get<CurrencyType>(`assets/${id}`)
+  },
+  getTopCurrency(perPage: number) {
+    return instance.get<CurrencyListType>(`assets?limit=${perPage}`)
   },
   getCurrencyHistory(id: string) {
-    const promise = instance.get<CurrencyHistoryListType>(`v2/assets/${id}/history?interval=d1`);
+    const promise = instance.get<CurrencyHistoryListType>(`assets/${id}/history?interval=d1`);
     return promise;
   }
 }

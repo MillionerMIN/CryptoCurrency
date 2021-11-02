@@ -4,6 +4,7 @@ import { CurrencyType } from '../../api/api';
 import {
   setCurrencyListTC,
   setCurrentPageAC,
+  setTotalCounterTC,
 } from '../../redux/currencyListReducer';
 import {
   getCurrentPage,
@@ -27,6 +28,7 @@ export const Layout = () => {
   const perPage = useSelector<AppRootStateType, number>(getPerPage);
 
   useEffect(() => {
+    dispatch(setTotalCounterTC());
     dispatch(setCurrencyListTC(currentPage, perPage));
   }, [dispatch, currentPage, perPage]);
 
@@ -47,7 +49,7 @@ export const Layout = () => {
         />
       </div>
       <div className="col-8">
-        <Page data={currencyList} />
+        <Page />
       </div>
     </div>
   );

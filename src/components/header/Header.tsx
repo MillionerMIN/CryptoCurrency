@@ -5,27 +5,22 @@ import {
   getCostWallet,
   getPercentTransaction,
   getSessionCostWallet,
+  getTopCurrency,
 } from '../../redux/selectors';
 import { AppRootStateType } from '../../redux/store';
 
 import './Header.scss';
 
-type HeaderPropsType = {
-  data: CurrencyType[];
-};
-
-export const Header = (props: HeaderPropsType) => {
-  const { data } = props;
+export const Header = () => {
   const costWallet = useSelector<AppRootStateType, number>(getCostWallet);
   const sessionCostWallet = useSelector<AppRootStateType, number>(
     getSessionCostWallet
   );
   // percent transaction from cost wallet
   const percent = useSelector<AppRootStateType, number>(getPercentTransaction);
+  const topCur = useSelector<AppRootStateType, CurrencyType[]>(getTopCurrency);
 
-  const newData = data.filter((item) => +item.rank <= 3);
-
-  const el = newData.map((el) => {
+  const el = topCur.map((el) => {
     const fix = (+el.priceUsd).toFixed(2);
 
     return (

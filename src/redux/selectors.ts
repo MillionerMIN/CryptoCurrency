@@ -5,6 +5,12 @@ import { AppRootStateType } from './store';
 export const getDataCurrentCrypto = (state: AppRootStateType) => {
   return state.currencyList.currency
 }
+export const getCurrentCrypto = (state: AppRootStateType) => {
+  return state.currencyList.currentCur
+}
+export const getTopCurrency = (state: AppRootStateType) => {
+  return state.currencyList.topCurrency
+}
 export const getInfoCurrentCrypto = (state: AppRootStateType) => {
   return state.currencyList.chartHistory
 }

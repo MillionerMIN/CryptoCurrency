@@ -5,8 +5,13 @@
   align-items: center;
 
   .active {
+    width: 38px;
+    text-align: center;
+    border: 1px solid #A790C6;
+    background: #A790C6;
+    border-radius: 50%;
     font-weight: 500;
     font-size: 24px;
-    color: #A790C6
+    color: #fff;
   }
 }
