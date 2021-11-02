@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { CurrencyType } from '../../api/Api';
+import { CurrencyType } from '../../api/api';
 import { Item } from '../common/item/Item';
 
 import { Paginate } from '../common/paginate/Paginate';
@@ -8,26 +7,16 @@ import './Main.scss';
 
 type MainPropsType = {
   data: CurrencyType[];
+  totalCount: number;
+  currentPage: number;
+  perPage: number;
+  onPageChange: (pageNumber: number) => void;
 };
 
 export const Main = (props: MainPropsType) => {
-  const { data } = props;
+  const { data, totalCount, currentPage, perPage, onPageChange } = props;
 
-  const currencyTotalCount = data.length;
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const counterPerPage = 10;
-
-  const lastCurrencyIndex = currentPage * counterPerPage;
-  const firstCurrencyIndex = lastCurrencyIndex - counterPerPage;
-  const currentElement = data.slice(firstCurrencyIndex, lastCurrencyIndex);
-
-  const onPageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const element = currentElement.map((item) => (
-    <Item key={item.id} data={item} />
-  ));
+  const element = data.map((item) => <Item key={item.id} data={item} />);
 
   return (
     <section className="main">
@@ -39,8 +28,8 @@ export const Main = (props: MainPropsType) => {
       </div>
       <div className="items">{element}</div>
       <Paginate
-        totalCount={currencyTotalCount}
-        pageSize={counterPerPage}
+        totalCount={totalCount}
+        pageSize={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
       />

@@ -1,4 +1,4 @@
-import { CurrencyWalletType } from "../redux/wallet-reducer";
+import { CurrencyWalletType } from "../redux/walletReducer";
 
 export const loadState = (key: string) => {
   try {

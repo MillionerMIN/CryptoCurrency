@@ -2,18 +2,15 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CurrencyHistoryType, CurrencyType } from '../../api/Api';
-import {
-  setCurrencyHistoryTC,
-  setCurrencyListTC,
-} from '../../redux/currencyList-reducer';
+import { CurrencyHistoryType, CurrencyType } from '../../api/api';
+import { setCurrencyHistoryTC } from '../../redux/currencyListReducer';
 import { AppRootStateType } from '../../redux/store';
 import { BarChart } from '../common/barChart/BarChart';
 import ChevronLeft from '../../icons/parts/chevron-left.svg';
 import {
   getDataCurrentCrypto,
   getInfoCurrentCrypto,
-} from '../../redux/selectots';
+} from '../../redux/selectors';
 
 import './Information.scss';
 
@@ -26,11 +23,12 @@ export const Information = () => {
     getDataCurrentCrypto
   );
 
+  console.log(dataCurrentCrypto);
+
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCurrencyListTC());
     dispatch(setCurrencyHistoryTC(id));
   }, [dispatch, id]);
 

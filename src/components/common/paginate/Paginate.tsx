@@ -16,13 +16,16 @@ export const Paginate = (props: PaginatePropsType) => {
   for (let i = 1; i <= pageCounter; i++) {
     pages.push(i);
   }
+  console.log(currentPage);
+
+  const curPage = currentPage ? +currentPage.toString()[0] + 1 : 1;
 
   return (
     <div className="paginate">
       {pages.map((page) => (
         <span
           key={page}
-          className={currentPage === page ? 'active' : ''}
+          className={curPage === page ? 'active' : ''}
           onClick={() => {
             onPageChange(page);
           }}

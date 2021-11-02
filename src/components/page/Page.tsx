@@ -1,6 +1,6 @@
 import './Page.scss';
 import { Header } from '../header/Header';
-import { CurrencyType } from '../../api/Api';
+import { CurrencyType } from '../../api/api';
 import { History } from '../history/History';
 
 type PagePropsType = {

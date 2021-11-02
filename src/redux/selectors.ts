@@ -1,12 +1,21 @@
 import { AppRootStateType } from './store';
 
 
-//selects CurrencyList-reducer
+//selects CurrencyListReducer
 export const getDataCurrentCrypto = (state: AppRootStateType) => {
   return state.currencyList.currency
 }
 export const getInfoCurrentCrypto = (state: AppRootStateType) => {
   return state.currencyList.chartHistory
+}
+export const getTotalCount = (state: AppRootStateType) => {
+  return state.currencyList.totalCount
+}
+export const getCurrentPage = (state: AppRootStateType) => {
+  return state.currencyList.currentPage
+}
+export const getPerPage = (state: AppRootStateType) => {
+  return state.currencyList.perPage
 }
 
 

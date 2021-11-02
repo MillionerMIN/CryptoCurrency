@@ -1,5 +1,5 @@
 import { Bar } from 'react-chartjs-2';
-import { CurrencyHistoryType } from '../../../api/Api';
+import { CurrencyHistoryType } from '../../../api/api';
 
 type BarChartPropsType = {
   id: string;

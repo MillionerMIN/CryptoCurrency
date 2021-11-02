@@ -1,11 +1,11 @@
 import { Button } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
-import { CurrencyType } from '../../../api/Api';
+import { CurrencyType } from '../../../api/api';
 import { ModalWindow } from '../modal/ModalWindow';
 import './Item.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCrypto, removeCrypto } from '../../../redux/wallet-reducer';
+import { addCrypto, removeCrypto } from '../../../redux/walletReducer';
 
 type ItemPropsType = {
   data: CurrencyType;

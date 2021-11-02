@@ -1,8 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunkMiddleware from 'redux-thunk'
 import { saveState } from "../utils/localStorageUtil";
-import { currencyListReducer } from "./currencyList-reducer";
-import { walletReducer } from './wallet-reducer';
+import { currencyListReducer } from "./currencyListReducer";
+import { walletReducer } from './walletReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 export const rootReducer = combineReducers({

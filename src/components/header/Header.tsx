@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
-import { CurrencyType } from '../../api/Api';
+import { CurrencyType } from '../../api/api';
 import Ava from '../../icons/person/avatar.svg';
 import {
   getCostWallet,
   getPercentTransaction,
   getSessionCostWallet,
-} from '../../redux/selectots';
+} from '../../redux/selectors';
 import { AppRootStateType } from '../../redux/store';
 
 import './Header.scss';

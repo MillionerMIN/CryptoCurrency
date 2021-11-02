@@ -6,9 +6,12 @@ const instance = axios.create({
 
 //API
 export const currencyAPI = {
-  getCurrencyList() {
-    const promise = instance.get<CurrencyListType>('v2/assets')
+  getCurrencyList(offset: number, perPage: number) {
+    const promise = instance.get<CurrencyListType>(`v2/assets?offset=${offset}&limit=${perPage}`)
     return promise;
+  },
+  getCurrentCurrency(id: string) {
+    return instance.get<CurrencyType>(`v2/assets/${id}`)
   },
   getCurrencyHistory(id: string) {
     const promise = instance.get<CurrencyHistoryListType>(`v2/assets/${id}/history?interval=d1`);
