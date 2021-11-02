@@ -16,7 +16,6 @@ export const Paginate = (props: PaginatePropsType) => {
   for (let i = 1; i <= pageCounter; i++) {
     pages.push(i);
   }
-  console.log(currentPage);
 
   const curPage = currentPage ? +currentPage.toString()[0] + 1 : 1;
 

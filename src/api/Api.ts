@@ -14,7 +14,7 @@ export const currencyAPI = {
     return promise;
   },
   getCurrentCurrency(id: string) {
-    return instance.get<CurrencyType>(`assets/${id}`)
+    return instance.get<CurrentCurrencyType>(`assets/${id}`)
   },
   getTopCurrency(perPage: number) {
     return instance.get<CurrencyListType>(`assets?limit=${perPage}`)
@@ -48,6 +48,10 @@ export type CurrencyHistoryType = {
 
 export type CurrencyHistoryListType = {
   data: CurrencyHistoryType[]
+  timestamp: number
+}
+export type CurrentCurrencyType = {
+  data: CurrencyType
   timestamp: number
 }
 

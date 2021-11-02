@@ -71,7 +71,7 @@ export const setCurrentCurrencyTC = (id: string) => async (dispatch: Dispatch<Ac
     dispatch(setIsLoading(true))
     await currencyAPI.getCurrentCurrency(id)
       .then((res) => {
-        dispatch(setCurrentCurrencyAC(res.data))
+        dispatch(setCurrentCurrencyAC(res.data.data))
       })
     dispatch(setIsLoading(false))
   } catch (error) {
