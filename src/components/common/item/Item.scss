@@ -1,34 +1,46 @@
+@import '../../../assets/_variable';
+
 .item {
   display: grid;
-  margin-bottom: 20px;
-  padding: 5px;
   grid-template-columns: 1fr 40px;
   column-gap: 10px;
   align-items: center;
   align-self: center;
-  // text-align: center;
-  background-color: #FFFFFF;
+  background-color: $px-white;
   border-radius: 8px;
 
-  .link {
+  &_mb {
+    margin-bottom: 15px;
+  }
+
+  &_pd {
+    padding: 5px;
+  }
+
+  &_bg {
+    background: $px-body;
+    box-shadow: inset 0px 0px 8px 1px $px-shadow;
+  }
+
+
+  &__link {
     display: grid;
     grid-template-columns: 100px 1fr 100px;
+    text-decoration: none;
   }
 
-  .symbol {
-    color: #27AE60;
+  &__symbol {
+    color: $px-green;
   }
 
-  .text {
-    color: #323232;
+  &__text {
+    color: $px-text;
     font-weight: 500;
-    font-size: 16px;
   }
 
-  .cost {
-    color: #000000;
+  &__cost {
+    color: $px-black;
     font-weight: 600;
-    font-size: 16px;
     text-align: center;
   }
 }

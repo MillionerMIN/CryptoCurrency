@@ -1,0 +1,18 @@
+@import '../../assets/_variable';
+
+.content {
+  height: 100%;
+  background: $px-body;
+  box-shadow: inset 0px 0px 8px 1px $px-shadow;
+  border-radius: 20px;
+
+  &_pd20-30 {
+    padding: 20px 30px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-auto-rows: auto;
+    row-gap: 20px;
+  }
+}

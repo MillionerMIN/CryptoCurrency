@@ -1,4 +1,4 @@
-import './Paginate.scss';
+import './paginate.scss';
 
 type PaginatePropsType = {
   totalCount: number;
@@ -24,7 +24,11 @@ export const Paginate = (props: PaginatePropsType) => {
       {pages.map((page) => (
         <span
           key={page}
-          className={curPage === page ? 'active' : ''}
+          className={
+            curPage === page
+              ? 'paginate__span paginate__span_active'
+              : 'paginate__span'
+          }
           onClick={() => {
             onPageChange(page);
           }}

@@ -2,7 +2,7 @@ import { Button } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { CurrencyType } from '../../../api/api';
 import { ModalWindow } from '../modal/ModalWindow';
-import './Item.scss';
+import './item.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCrypto, removeCrypto } from '../../../redux/walletReducer';
@@ -24,6 +24,7 @@ export const Item = (props: ItemPropsType) => {
   };
 
   const dispatch = useDispatch();
+  //Handler Buy and Sale currency
   const onChangeHandler = (numberCur: number, value: string) => {
     const newCur = {
       id: id,
@@ -39,13 +40,18 @@ export const Item = (props: ItemPropsType) => {
       setShow(!show);
     }
   };
+  //Function is check even number
+  function isEven(value: number) {
+    return !(value % 2);
+  }
+  const clazz = isEven(+props.data.rank) ? 'item_bg' : '';
 
   return (
-    <div className="item">
-      <Link onClick={onInfoHandler} className="link" to={`/assets/${id}`}>
-        <div className="symbol">{symbol}</div>
-        <div className="text">{name}</div>
-        <div className="cost">{cost.toFixed(2)}</div>
+    <div className={`item item_mb item_pd ${clazz}`}>
+      <Link onClick={onInfoHandler} className="item__link" to={`/assets/${id}`}>
+        <div className="item__symbol">{symbol}</div>
+        <div className="item__text">{name}</div>
+        <div className="item__cost">{cost.toFixed(2)}</div>
       </Link>
       <Button variant="outline-success" onClick={onShowCloseModal}>
         +

@@ -1,12 +1,11 @@
-import './Page.scss';
+import './content.scss';
 import { Header } from '../header/Header';
 import { History } from '../history/History';
 
-
-export const Page = () => {
+export const Content = () => {
   return (
-    <section className="page">
-      <div className="page__wrapper">
+    <section className="content content_pd20-30">
+      <div className="content__wrapper">
         <Header />
         <History />
       </div>

@@ -32,11 +32,5 @@ export const BarChart = (props: BarChartPropsType) => {
     },
   };
 
-  return (
-    <>
-      <div className="chart">
-        <Bar data={data} options={options} />
-      </div>
-    </>
-  );
+  return <Bar data={data} options={options} />;
 };

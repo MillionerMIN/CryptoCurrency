@@ -1,23 +1,24 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CurrencyType } from '../../api/api';
+import { CurrencyType } from '../../../api/api';
 import {
   setCurrencyListTC,
   setCurrentPageAC,
   setTotalCounterTC,
-} from '../../redux/currencyListReducer';
+} from '../../../redux/currencyListReducer';
 import {
   getCurrentPage,
   getDataCurrentCrypto,
   getPerPage,
   getTotalCount,
-} from '../../redux/selectors';
-import { AppRootStateType } from '../../redux/store';
-import { Main } from '../main/Main';
-import { Page } from '../page/Page';
-import './Layout.scss';
+} from '../../../redux/selectors';
+import { AppRootStateType } from '../../../redux/store';
+import { Content } from '../../Content/Content';
+import { Main } from '../../main/Main';
 
-export const Layout = () => {
+import './basePage.scss';
+
+export const BasePage = () => {
   const dispatch = useDispatch();
   const currencyList = useSelector<AppRootStateType, CurrencyType[]>(
     getDataCurrentCrypto
@@ -38,18 +39,20 @@ export const Layout = () => {
   };
 
   return (
-    <div className="row layout">
-      <div className="col-4">
-        <Main
-          data={currencyList}
-          totalCount={totalCount}
-          currentPage={currentPage}
-          perPage={perPage}
-          onPageChange={onPageChange}
-        />
-      </div>
-      <div className="col-8">
-        <Page />
+    <div className="base-page base-page_mr">
+      <div className="row">
+        <div className="col-4">
+          <Main
+            data={currencyList}
+            totalCount={totalCount}
+            currentPage={currentPage}
+            perPage={perPage}
+            onPageChange={onPageChange}
+          />
+        </div>
+        <div className="col-8">
+          <Content />
+        </div>
       </div>
     </div>
   );

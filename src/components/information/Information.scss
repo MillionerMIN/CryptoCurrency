@@ -1,42 +1,52 @@
+@import '../../assets/variable';
+
 .information {
-  margin: 20px 0;
-  padding: 15px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 6px #CAD6F3;
+  background: $px-white;
+  box-shadow: 0px 4px 6px $px-shadow;
   border-radius: 20px;
+
+  &_mr20 {
+    margin: 20px 0;
+  }
+
+  &_pd15 {
+    padding: 20px 30px 15px 30px;
+  }
 
   &__panel {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     margin-bottom: 20px;
-
-    .link {
-      text-decoration: none;
-      color: #6c757d;
-    }
   }
 
-  &__table {
-    table {
-      width: 100%;
-      text-align: center;
-      color: #6c757d;
-    }
+  &__link {
+    text-decoration: none;
+    color: $px-grey;
+  }
 
-    .up {
+  &__barChart {
+    padding: 20px 20px;
+    height: 100%;
+    background: $px-body;
+    box-shadow: inset 0px 0px 8px 1px $px-shadow;
+    border-radius: 20px;
+  }
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  color: $px-grey;
+
+  &__text {
+    &_up {
       color: #27AE60;
     }
 
-    .down {
+    &_down {
       color: #EB5757;
     }
   }
 
-  &__barChart {
-    padding: 20px 30px;
-    height: 100%;
-    background: rgba(249, 250, 253, 0.5);
-    box-shadow: inset 0px 0px 8px 1px rgba(202, 214, 243, 0.6);
-    border-radius: 20px;
-  }
+
 }

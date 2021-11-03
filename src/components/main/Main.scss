@@ -1,29 +1,27 @@
 .main {
-  margin: 20px 0;
   height: 100%;
 
-  &-logo {
+  &__header {
     margin-bottom: 15px;
     text-align: center;
-
-    .logo {
-      margin: 0 auto;
-      width: 50px;
-      height: 50px;
-
-      img {
-        width: 100%;
-      }
-    }
   }
 
-  .items {
+  &__items {
     display: grid;
     justify-content: center;
+  }
+}
 
-    .link {
-      text-decoration: none;
-    }
+.logo {
+  width: 50px;
+  height: 50px;
+
+  &_center {
+    margin: 0 auto;
   }
 
+  &__img {
+
+    width: 100%;
+  }
 }

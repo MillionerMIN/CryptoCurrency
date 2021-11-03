@@ -1,51 +1,67 @@
+@import '../../assets/variable';
+
 .header {
   display: grid;
   grid-template-columns: 1fr 340px;
   column-gap: 10px;
-  padding: 20px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 6px #CAD6F3;
+  background: $px-white;
+  box-shadow: 0px 4px 6px $px-skyBlue;
   border-radius: 20px;
-  color: #323232;
+
+  &_pd20 {
+    padding: 20px;
+  }
 
   &__money {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
-
-    div {
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      justify-items: center;
-      align-self: center;
-
-      .element {
-        text-align: center;
-        font-weight: 500;
-        color: #A790C6;
-      }
-    }
   }
 
-  &__profile {
+
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 62px;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  &__name {
+    font-size: 1.2rem;
+  }
+
+  &__avatar {
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  &__targets {
     display: grid;
-    grid-template-columns: 1fr 62px;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
     justify-items: center;
+    color: $px-green;
+  }
+}
 
-    &__avatar {
-      width: 100%;
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 3;
-    }
 
-    &__targets {
-      display: grid;
-      justify-items: center;
-      color: #27AE60;
+.element {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-self: center;
+
+  &__span {
+    text-align: center;
+    font-weight: 500;
+
+    &_text {
+      &_color {
+        color: $px-purple;
+      }
     }
   }
 }

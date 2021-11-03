@@ -1,3 +1,5 @@
+@import '../../../assets/variable';
+
 .paginate {
   display: grid;
   grid-auto-flow: column;
@@ -5,14 +7,18 @@
   align-items: center;
   cursor: pointer;
 
-  .active {
-    width: 38px;
+  &__span {
     text-align: center;
-    border: 1px solid #A790C6;
-    background: #A790C6;
-    border-radius: 50%;
-    font-weight: 500;
-    font-size: 24px;
-    color: #fff;
+
+    &_active {
+      width: 38px;
+      text-align: center;
+      border: 1px solid $px-purple;
+      background: $px-purple;
+      border-radius: 50%;
+      font-weight: 500;
+      font-size: 24px;
+      color: $px-white;
+    }
   }
 }

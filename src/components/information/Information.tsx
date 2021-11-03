@@ -10,9 +10,8 @@ import { AppRootStateType } from '../../redux/store';
 import { BarChart } from '../common/barChart/BarChart';
 import ChevronLeft from '../../icons/parts/chevron-left.svg';
 import { getCurrentCrypto, getInfoCurrentCrypto } from '../../redux/selectors';
-
-import './Information.scss';
 import { CurrencyHistoryType, CurrencyType } from '../../api/api';
+import './Information.scss';
 
 export const Information = () => {
   const dispatch = useDispatch();
@@ -42,7 +41,7 @@ export const Information = () => {
   }, [dispatch, id]);
 
   const table = (
-    <table>
+    <table className="table">
       <thead>
         <tr>
           <th>Rank</th>
@@ -62,7 +61,11 @@ export const Information = () => {
           <td>{'$' + (+priceUsd).toFixed(2)}</td>
           <td>{'$' + (+marketCapUsd).toFixed(2)}</td>
           <td>{(+supply).toFixed(2) + 'm'}</td>
-          <td className={+changePercent24Hr > 0 ? 'up' : 'down'}>
+          <td
+            className={
+              +changePercent24Hr > 0 ? 'table__text_up' : 'table__text_down'
+            }
+          >
             {(+changePercent24Hr).toFixed(2) + '%'}
           </td>
           <td>{'$' + (+volumeUsd24Hr).toFixed(2)}</td>
@@ -73,20 +76,22 @@ export const Information = () => {
   );
 
   return (
-    <section className="row information">
-      <div className="information__panel">
-        <div>
-          <Link className="link" to={`/`}>
-            <span>
-              <img src={ChevronLeft} alt="React Logo" />
-              Back
-            </span>
-          </Link>
+    <section className="information information_mr20 information_pd15">
+      <div className="row">
+        <div className="information__panel">
+          <div>
+            <Link className="information__link" to={`/`}>
+              <span>
+                <img src={ChevronLeft} alt="React Logo" />
+                Back
+              </span>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="information__table">{table}</div>
-      <div className="information__barChart">
-        <BarChart infoData={infoCurrentCrypto} id={id} />
+        {table}
+        <div className="information__barChart">
+          <BarChart infoData={infoCurrentCrypto} id={id} />
+        </div>
       </div>
     </section>
   );

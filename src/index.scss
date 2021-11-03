@@ -1,6 +1,10 @@
+@import 'assets/_variable.scss';
+@import 'assets/title';
+
 body {
   margin: 0;
-  background: #EDF2FF;
+  background: $px-bg;
+  color: $px-text;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
