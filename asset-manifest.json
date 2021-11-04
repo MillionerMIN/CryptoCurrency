@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/CryptoCurrency/static/css/main.2a30419c.chunk.css",
-    "main.js": "/CryptoCurrency/static/js/main.6409f6c1.chunk.js",
-    "main.js.map": "/CryptoCurrency/static/js/main.6409f6c1.chunk.js.map",
+    "main.css": "/CryptoCurrency/static/css/main.49d4c12a.chunk.css",
+    "main.js": "/CryptoCurrency/static/js/main.a32a1436.chunk.js",
+    "main.js.map": "/CryptoCurrency/static/js/main.a32a1436.chunk.js.map",
     "runtime-main.js": "/CryptoCurrency/static/js/runtime-main.cbff574f.js",
     "runtime-main.js.map": "/CryptoCurrency/static/js/runtime-main.cbff574f.js.map",
     "static/css/2.4659568d.chunk.css": "/CryptoCurrency/static/css/2.4659568d.chunk.css",
-    "static/js/2.e2742a1c.chunk.js": "/CryptoCurrency/static/js/2.e2742a1c.chunk.js",
-    "static/js/2.e2742a1c.chunk.js.map": "/CryptoCurrency/static/js/2.e2742a1c.chunk.js.map",
+    "static/js/2.a48c5c2f.chunk.js": "/CryptoCurrency/static/js/2.a48c5c2f.chunk.js",
+    "static/js/2.a48c5c2f.chunk.js.map": "/CryptoCurrency/static/js/2.a48c5c2f.chunk.js.map",
     "index.html": "/CryptoCurrency/index.html",
     "static/css/2.4659568d.chunk.css.map": "/CryptoCurrency/static/css/2.4659568d.chunk.css.map",
-    "static/css/main.2a30419c.chunk.css.map": "/CryptoCurrency/static/css/main.2a30419c.chunk.css.map",
-    "static/js/2.e2742a1c.chunk.js.LICENSE.txt": "/CryptoCurrency/static/js/2.e2742a1c.chunk.js.LICENSE.txt",
+    "static/css/main.49d4c12a.chunk.css.map": "/CryptoCurrency/static/css/main.49d4c12a.chunk.css.map",
+    "static/js/2.a48c5c2f.chunk.js.LICENSE.txt": "/CryptoCurrency/static/js/2.a48c5c2f.chunk.js.LICENSE.txt",
     "static/media/avatar.eb51d125.svg": "/CryptoCurrency/static/media/avatar.eb51d125.svg",
     "static/media/chevron-left.c80cdd8e.svg": "/CryptoCurrency/static/media/chevron-left.c80cdd8e.svg",
-    "static/media/digital-wallet.61d97bb8.png": "/CryptoCurrency/static/media/digital-wallet.61d97bb8.png"
+    "static/media/digital-wallet.61d97bb8.png": "/CryptoCurrency/static/media/digital-wallet.61d97bb8.png",
+    "static/media/error-429.55b8d755.jpeg": "/CryptoCurrency/static/media/error-429.55b8d755.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.cbff574f.js",
     "static/css/2.4659568d.chunk.css",
-    "static/js/2.e2742a1c.chunk.js",
-    "static/css/main.2a30419c.chunk.css",
-    "static/js/main.6409f6c1.chunk.js"
+    "static/js/2.a48c5c2f.chunk.js",
+    "static/css/main.49d4c12a.chunk.css",
+    "static/js/main.a32a1436.chunk.js"
   ]
 }
