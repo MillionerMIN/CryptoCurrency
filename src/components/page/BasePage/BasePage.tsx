@@ -13,7 +13,7 @@ import {
   getTotalCount,
 } from '../../../redux/selectors';
 import { AppRootStateType } from '../../../redux/store';
-import { Content } from '../../Content/Content';
+import { Content } from '../../content/Content';
 import { Main } from '../../main/Main';
 
 import './basePage.scss';

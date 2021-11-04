@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Button, FormControl, InputGroup, Modal } from 'react-bootstrap';
 import { CurrencyType } from '../../../api/api';
 
-import './ModalWindow.scss';
+import './modalWindow.scss';
 
 type ModalWindowPropsType = {
   data: CurrencyType;

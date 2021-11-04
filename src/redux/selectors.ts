@@ -1,5 +1,12 @@
 import { AppRootStateType } from './store';
 
+//selectors appReducer
+export const setLoading = (state: AppRootStateType) => {
+  return state.loading.isLoading
+}
+export const setError = (state: AppRootStateType) => {
+  return state.error.error
+}
 
 //selects CurrencyListReducer
 export const getDataCurrentCrypto = (state: AppRootStateType) => {
@@ -23,7 +30,6 @@ export const getCurrentPage = (state: AppRootStateType) => {
 export const getPerPage = (state: AppRootStateType) => {
   return state.currencyList.perPage
 }
-
 
 //selects Wallet-reducer
 export const getCostWallet = (state: AppRootStateType): number => {

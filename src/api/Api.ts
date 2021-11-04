@@ -17,7 +17,7 @@ export const currencyAPI = {
     return instance.get<CurrentCurrencyType>(`assets/${id}`)
   },
   getTopCurrency(perPage: number) {
-    return instance.get<CurrencyListType>(`assets?limit=${perPage}`)
+    return instance.get<CurrencyListType>(`asses?limit=${perPage}`)
   },
   getCurrencyHistory(id: string) {
     const promise = instance.get<CurrencyHistoryListType>(`assets/${id}/history?interval=d1`);

@@ -9,9 +9,16 @@ import {
 import { AppRootStateType } from '../../redux/store';
 import { BarChart } from '../common/barChart/BarChart';
 import ChevronLeft from '../../icons/parts/chevron-left.svg';
-import { getCurrentCrypto, getInfoCurrentCrypto } from '../../redux/selectors';
+import {
+  getCurrentCrypto,
+  getInfoCurrentCrypto,
+  setError,
+  setLoading,
+} from '../../redux/selectors';
 import { CurrencyHistoryType, CurrencyType } from '../../api/api';
 import './Information.scss';
+import { IsLoading } from '../common/isLoading/IsLoading';
+import { ModalError } from '../common/error/ModalError';
 
 export const Information = () => {
   const dispatch = useDispatch();
@@ -31,9 +38,9 @@ export const Information = () => {
     CurrencyHistoryType[]
   >(getInfoCurrentCrypto);
 
-  console.log(infoCurrentCrypto);
-
   const { id } = useParams<{ id: string }>();
+  const loading = useSelector<AppRootStateType, boolean>(setLoading);
+  const error = useSelector<AppRootStateType, string>(setError);
 
   useEffect(() => {
     dispatch(setCurrencyHistoryTC(id));
@@ -77,6 +84,7 @@ export const Information = () => {
 
   return (
     <section className="information information_mr20 information_pd15">
+      {loading && <IsLoading />}
       <div className="row">
         <div className="information__panel">
           <div>
@@ -88,6 +96,7 @@ export const Information = () => {
             </Link>
           </div>
         </div>
+        {error === 'error' && <ModalError />}
         {table}
         <div className="information__barChart">
           <BarChart infoData={infoCurrentCrypto} id={id} />

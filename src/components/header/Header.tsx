@@ -6,8 +6,10 @@ import {
   getPercentTransaction,
   getSessionCostWallet,
   getTopCurrency,
+  setLoading,
 } from '../../redux/selectors';
 import { AppRootStateType } from '../../redux/store';
+import { Spinner } from '../common/spinner/Spinner';
 
 import './header.scss';
 
@@ -19,6 +21,7 @@ export const Header = () => {
   // percent transaction from cost wallet
   const percent = useSelector<AppRootStateType, number>(getPercentTransaction);
   const topCur = useSelector<AppRootStateType, CurrencyType[]>(getTopCurrency);
+  const loading = useSelector<AppRootStateType, boolean>(setLoading);
 
   const el = topCur.map((el) => {
     const fix = (+el.priceUsd).toFixed(2);
@@ -35,7 +38,10 @@ export const Header = () => {
 
   return (
     <section className="header header_pd20">
-      <div className="header__money">{el}</div>
+      <div className="header__money">
+        {loading && <Spinner />}
+        {el}
+      </div>
       <div className="profile">
         <span className="profile__name">profile@gmail.com</span>
         <div className="profile__avatar">
