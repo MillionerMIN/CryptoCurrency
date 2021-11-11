@@ -1,4 +1,5 @@
 import HeaderLogo from '../../icons/digital-wallet.png';
+import { Socials } from '../socials/socials';
 
 import './header.scss';
 
@@ -13,10 +14,10 @@ export const Header = () => {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__logo">
-            <img className='logo__img' src={HeaderLogo} alt="header-logo" />
+            <img className="logo__img" src={HeaderLogo} alt="header-logo" />
           </div>
           <div className="header__items">{item}</div>
-          <div className="header__socials-link"></div>
+          <Socials />
         </div>
       </div>
     </header>

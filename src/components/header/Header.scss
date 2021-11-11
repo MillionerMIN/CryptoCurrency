@@ -5,7 +5,7 @@
 
 .header__wrapper {
   display: grid;
-  grid-template-columns: 106px 2fr 1fr;
+  grid-template-columns: 106px 3fr 1fr;
   justify-content: center;
   align-items: center;
   margin: 0 50px;
@@ -21,4 +21,5 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  font-size: 25px;
 }

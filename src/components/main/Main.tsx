@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { AppRootStateType } from '../../redux/store';
 import { setError, setLoading } from '../../redux/selectors';
 import { MessageError } from '../common/error/messageError';
+import { InfoPanel } from '../info/InfoPanel';
 
 type MainPropsType = {
   data: CurrencyType[];
@@ -41,6 +42,7 @@ export const Main = (props: MainPropsType) => {
         currentPage={currentPage}
         onPageChange={onPageChange}
       />
+      <InfoPanel />
     </section>
   );
 };

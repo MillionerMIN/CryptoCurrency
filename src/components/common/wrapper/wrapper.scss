@@ -1,0 +1,11 @@
+@import '../../../assets/variable';
+
+.wrapper {
+  background: $px-white;
+  box-shadow: 0px 4px 6px $px-skyBlue;
+  border-radius: 20px;
+
+  &_pd20 {
+    padding: 20px;
+  }
+}
