@@ -39,21 +39,23 @@ export const BasePage = () => {
   };
 
   return (
-    <div className="base-page base-page_mr">
-      <div className="row">
-        <div className="col-4">
-          <Main
-            data={currencyList}
-            totalCount={totalCount}
-            currentPage={currentPage}
-            perPage={perPage}
-            onPageChange={onPageChange}
-          />
-        </div>
-        <div className="col-8">
-          <Content />
+    <>
+      <div className="base-page base-page_mr">
+        <div className="row">
+          <div className="col-4">
+            <Main
+              data={currencyList}
+              totalCount={totalCount}
+              currentPage={currentPage}
+              perPage={perPage}
+              onPageChange={onPageChange}
+            />
+          </div>
+          <div className="col-8">
+            <Content />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

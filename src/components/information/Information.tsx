@@ -86,7 +86,7 @@ export const Information = () => {
     <section className="information information_mr20 information_pd15">
       {loading && <IsLoading />}
       <div className="row">
-        <div className="information__panel">
+        <div className="information__panel  information__panel_mb20">
           <div>
             <Link className="information__link" to={`/`}>
               <span>

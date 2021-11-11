@@ -9,6 +9,7 @@
 
   &__span {
     text-align: center;
+    width: 100%;
 
     &_active {
       width: 38px;
@@ -21,4 +22,4 @@
       color: $px-white;
     }
   }
-}
+} 

@@ -16,7 +16,10 @@
   &__panel {
     display: grid;
     grid-template-columns: 1fr;
-    margin-bottom: 20px;
+
+    &_mb20 {
+      margin-bottom: 20px;
+    }
   }
 
   &__link {

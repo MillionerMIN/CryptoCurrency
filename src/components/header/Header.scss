@@ -1,67 +1,25 @@
-@import '../../assets/variable';
-
 .header {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  column-gap: 10px;
-  background: $px-white;
-  box-shadow: 0px 4px 6px $px-skyBlue;
-  border-radius: 20px;
-
-  &_pd20 {
-    padding: 20px;
-  }
-
-  &__money {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
-  }
-
-
+  height: 134px;
+  background: #E3D7F1;
 }
 
-.profile {
+.header__wrapper {
   display: grid;
-  grid-template-columns: 1fr 62px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 106px 2fr 1fr;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
-
-  &__name {
-    font-size: 1.2rem;
-  }
-
-  &__avatar {
-    width: 100%;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-
-  &__targets {
-    display: grid;
-    justify-items: center;
-    color: $px-green;
-  }
+  margin: 0 120px;
+  padding: 15px 0;
 }
 
+.header__logo {}
 
-.element {
+.logo__img {
+  width: 100%;
+}
+
+.header__items {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  align-self: center;
-
-  &__span {
-    text-align: center;
-    font-weight: 500;
-
-    &_text {
-      &_color {
-        color: $px-purple;
-      }
-    }
-  }
 }
