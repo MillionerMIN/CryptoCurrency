@@ -1,0 +1,50 @@
+@import '../../../assets/variable';
+
+.btn-custom {
+  height: 72px;
+  text-align: start;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  &:hover {
+    color: $px-purple;
+  }
+
+  &_active {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $px-purple;
+    background: rgba(249, 250, 253, 0.5);
+    box-shadow: inset 0px 0px 8px 1px $px-shadow;
+    border: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .btn-custom {
+    height: 68px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .btn-custom {
+    height: 50px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-custom {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-custom {
+    height: 100%;
+    font-size: .9rem;
+  }
+}

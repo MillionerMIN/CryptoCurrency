@@ -83,10 +83,10 @@ export const Information = () => {
   );
 
   return (
-    <section className="information information_mr20 information_pd15">
+    <section className="information information_mr20 information_mr10   information_pd15 information_pd10-20 ">
       {loading && <IsLoading />}
       <div className="row">
-        <div className="information__panel  information__panel_mb20">
+        <div className="information__panel  information__panel_mb20 information__panel_mb10">
           <div>
             <Link className="information__link" to={`/`}>
               <span>

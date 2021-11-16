@@ -7,10 +7,10 @@ import './socials.scss';
 export const Socials = () => {
   return (
     <div className="socials socials_gap40">
-      <img src={Telegram} alt="telegram" />
-      <img src={FaceBook} alt="facebook" />
-      <img src={Google} alt="google" />
-      <img src={Discord} alt="discord" />
+      <img className="socials__image" src={Telegram} alt="telegram" />
+      <img className="socials__image" src={FaceBook} alt="facebook" />
+      <img className="socials__image" src={Google} alt="google" />
+      <img className="socials__image" src={Discord} alt="discord" />
     </div>
   );
 };

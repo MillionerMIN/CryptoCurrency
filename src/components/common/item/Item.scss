@@ -30,6 +30,7 @@
   }
 
   &__symbol {
+    font-weight: 600;
     color: $px-green;
   }
 
@@ -43,4 +44,18 @@
     font-weight: 600;
     text-align: center;
   }
+}
+
+@media (max-width: 576px) {
+  .item {
+    &__link {
+      grid-template-columns: 1fr 100px;
+      align-items: center;
+    }
+
+    &__symbol {
+      display: none;
+    }
+  }
+
 }

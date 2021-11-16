@@ -1,5 +1,5 @@
 import FooterLogo from '../../icons/digital-wallet.png';
-import { Socials } from '../socials/socials';
+import { Socials } from '../socials/Socials';
 import './footer.scss';
 
 export const Footer = () => {

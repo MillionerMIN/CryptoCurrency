@@ -1,0 +1,27 @@
+@import '../../assets/variable';
+
+.profile {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  align-items: center;
+  justify-items: center;
+
+  &__name {
+    color: #A790C6;
+    font-size: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile {
+    grid-template-columns: 40px 1fr;
+
+    &__name {
+      font-size: 1.6rem;
+    }
+  }
+}

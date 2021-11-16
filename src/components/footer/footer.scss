@@ -9,7 +9,7 @@
   display: grid;
   margin: 0 50px;
   padding: 44px 0;
-  grid-template-columns: 93px 3fr 1fr;
+  grid-template-columns: 94px 3fr 1fr;
   justify-content: center;
   align-items: center;
   font-size: 20px;
@@ -18,4 +18,31 @@
 .footer__text {
   align-self: end;
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .footer__wrapper {
+    grid-template-columns: 80px 3fr 1fr;
+    margin: 0 20px;
+    padding: 20px 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer__wrapper {
+    grid-template-columns: 50px 3fr 1fr;
+    margin: 0 20px;
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__wrapper {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .footer__wrapper .socials {
+    display: none;
+  }
 }

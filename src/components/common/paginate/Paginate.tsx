@@ -20,7 +20,7 @@ export const Paginate = (props: PaginatePropsType) => {
   const curPage = currentPage ? +currentPage.toString()[0] + 1 : 1;
 
   return (
-    <div className="paginate">
+    <div className="paginate paginate_mb10">
       {pages.map((page) => (
         <span
           key={page}

@@ -8,8 +8,7 @@ import { appReducer } from "./appReducer";
 import { CurrencyHistoryType, CurrencyType } from "../api/api";
 
 export const rootReducer = combineReducers({
-  loading: appReducer,
-  error: appReducer,
+  app: appReducer,
   currencyList: currencyListReducer,
   wallet: walletReducer,
 });

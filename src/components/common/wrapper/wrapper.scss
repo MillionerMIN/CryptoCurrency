@@ -1,11 +1,22 @@
 @import '../../../assets/variable';
 
 .wrapper {
+  width: 100%;
   background: $px-white;
   box-shadow: 0px 4px 6px $px-skyBlue;
   border-radius: 20px;
 
   &_pd20 {
     padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    border-radius: 10px;
+
+    &_pd10 {
+      padding: 10px;
+    }
   }
 }

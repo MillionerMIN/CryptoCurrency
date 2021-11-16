@@ -9,8 +9,8 @@ export const Routing = () => {
     <>
       <Switch>
         <Route exact path={'/'} render={() => <BasePage />} />
-        <Route path={'/404'} render={() => <NotFound />} />
         <Route path={'/assets/:id'} render={() => <Information />} />
+        <Route path="*" component={() => <NotFound />} />
       </Switch>
     </>
   );

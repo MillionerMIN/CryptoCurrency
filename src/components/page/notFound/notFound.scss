@@ -1,0 +1,14 @@
+@import '../../../assets/variable';
+
+.btn_color_green {
+  background: $px-green;
+  color: $px-white;
+}
+
+.not-found {
+  text-align: center;
+
+  &_mr20 {
+    margin: 20px auto;
+  }
+}

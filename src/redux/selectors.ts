@@ -2,11 +2,15 @@ import { AppRootStateType } from './store';
 
 //selectors appReducer
 export const setLoading = (state: AppRootStateType) => {
-  return state.loading.isLoading
+  return state.app.isLoading
 }
 export const setError = (state: AppRootStateType) => {
-  return state.error.error
+  return state.app.error
 }
+// export const setActiveBtn = (state: AppRootStateType) => {
+//   return state.app.activeBtn
+// }
+
 
 //selects CurrencyListReducer
 export const getDataCurrentCrypto = (state: AppRootStateType) => {
