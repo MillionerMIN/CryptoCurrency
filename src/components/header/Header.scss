@@ -40,10 +40,14 @@
 
 .mob-header {
   display: none;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+
   z-index: 10;
+
+  &_position {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+  }
 
   >.d-flex {
     align-items: center;

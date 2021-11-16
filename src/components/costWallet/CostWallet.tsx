@@ -57,7 +57,7 @@ export const CostWallet = () => {
         </Wrapper>
         <div className="cost-wallet__coins">
           <Wrapper>
-            <div className="title">Currency Wallet</div>
+            <div className="cost-wallet__title">Currency Wallet</div>
             {element}
           </Wrapper>
         </div>

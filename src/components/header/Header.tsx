@@ -32,7 +32,7 @@ export const Header = () => {
   return (
     <>
       {/* {MOB-HEADER} */}
-      <div className="mob-header">
+      <div className="mob-header mob-header_position">
         <button className="mob-header__menu" onClick={handleClick}>
           <div className={click ? 'mob-header__humbugger_active' : ''}>
             <span className="mob-header__line"></span>
