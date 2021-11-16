@@ -7,7 +7,7 @@ import './header.scss';
 
 const arrayItems = [
   { name: 'Homepage', hash: '/' },
-  { name: 'Cost coins', hash: '/costwallet' },
+  { name: 'Cost wallet', hash: '/costwallet' },
   { name: 'About us', hash: '/about' },
 ];
 
@@ -20,7 +20,12 @@ export const Header = () => {
   const clazz = click ? 'header header_open' : 'header';
 
   const item = arrayItems.map((item) => (
-    <Link className="header__link" key={item.name} to={item.hash}>
+    <Link
+      className="header__link"
+      key={item.name}
+      to={item.hash}
+      onClick={handleClick}
+    >
       <div className="header__item">{item.name}</div>
     </Link>
   ));

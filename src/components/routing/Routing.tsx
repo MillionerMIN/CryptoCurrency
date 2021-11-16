@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router';
+import { CostWallet } from '../costWallet/CostWallet';
 import { Information } from '../information/Information';
 import { BasePage } from '../page/BasePage/BasePage';
 
@@ -10,6 +11,7 @@ export const Routing = () => {
       <Switch>
         <Route exact path={'/'} render={() => <BasePage />} />
         <Route path={'/assets/:id'} render={() => <Information />} />
+        <Route path={'/costwallet'} render={() => <CostWallet />} />
         <Route path="*" component={() => <NotFound />} />
       </Switch>
     </>

@@ -39,6 +39,9 @@ export const getPerPage = (state: AppRootStateType) => {
 export const getCostWallet = (state: AppRootStateType): number => {
   return state.wallet.costWallet
 }
+export const getCurrentsWallet = (state: AppRootStateType) => {
+  return state.wallet.wallet
+}
 export const getSessionCostWallet = (state: AppRootStateType): number => {
   return state.wallet.sessionCostWallet
 }

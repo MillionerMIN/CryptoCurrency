@@ -41,6 +41,8 @@ export const walletReducer = (state: InitialWalletStateType = initialWalletState
         ...state
       }
     }
+    case 'DELETE-WALLET':
+      return { ...state, wallet: [], costWallet: 0 }
     default:
       return state;
   }
@@ -50,6 +52,7 @@ export const walletReducer = (state: InitialWalletStateType = initialWalletState
 export const addCrypto = (amount: CurrencyWalletType) => ({ type: 'ADD-CRYPTO', amount } as const)
 export const removeCrypto = (amount: CurrencyWalletType) => ({ type: 'REMOVE-CRYPTO', amount } as const)
 export const costWallet = (sum: string) => ({ type: 'COST-WALLET', sum } as const)
+export const deleteWallet = () => ({ type: 'DELETE-WALLET' } as const)
 
 
 //Type
@@ -60,4 +63,4 @@ export type CurrencyWalletType = {
 }
 export type InitialWalletStateType = typeof initialWalletState
 
-type ActionsType = ReturnType<typeof addCrypto> | ReturnType<typeof removeCrypto> | ReturnType<typeof costWallet> 
+type ActionsType = ReturnType<typeof addCrypto> | ReturnType<typeof removeCrypto> | ReturnType<typeof costWallet> | ReturnType<typeof deleteWallet>
