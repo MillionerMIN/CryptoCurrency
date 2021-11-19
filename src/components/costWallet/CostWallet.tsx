@@ -14,9 +14,10 @@ import {
 export const CostWallet = () => {
   const dispatch = useDispatch();
   const costWallet = useSelector<AppRootStateType, number>(getCostWallet);
-  let arrayBoughtCurrency = useSelector<AppRootStateType, CurrencyWalletType[]>(
-    getCurrentsWallet
-  );
+  const arrayBoughtCurrency = useSelector<
+    AppRootStateType,
+    CurrencyWalletType[]
+  >(getCurrentsWallet);
 
   const onDeleteWallet = () => {
     dispatch(deleteWallet());

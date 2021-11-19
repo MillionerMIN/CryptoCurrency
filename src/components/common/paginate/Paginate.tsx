@@ -12,7 +12,7 @@ export const Paginate = (props: PaginatePropsType) => {
 
   //getting the right number of buttons
   const pageCounter = Math.ceil(totalCount / pageSize);
-  let pages = [];
+  const pages = [];
   for (let i = 1; i <= pageCounter; i++) {
     pages.push(i);
   }

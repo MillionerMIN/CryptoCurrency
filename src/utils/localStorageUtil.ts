@@ -1,4 +1,4 @@
-import { CurrencyWalletType } from "../redux/walletReducer";
+import { CurrencyWalletType } from '../redux/walletReducer';
 
 export const loadState = (key: string) => {
   try {
@@ -20,6 +20,4 @@ export const saveState = (state: StateLocalStorageType, key: string) => {
   }
 };
 
-type StateLocalStorageType = CurrencyWalletType[] | number
-
-
+type StateLocalStorageType = CurrencyWalletType[] | number;

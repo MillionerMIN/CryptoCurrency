@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { CurrencyType } from '../../api/api';
-import { getTopCurrency, setLoading, setError } from '../../redux/selectors';
+import { getTopCurrency, setLoading } from '../../redux/selectors';
 import { AppRootStateType } from '../../redux/store';
 import { Spinner } from '../common/spinner/Spinner';
 
