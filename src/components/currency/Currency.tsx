@@ -2,9 +2,8 @@ import { useSelector } from 'react-redux';
 import { setError } from '../../redux/selectors';
 import { AppRootStateType } from '../../redux/store';
 import { MessageError } from '../common/error/messageError';
-import { Item } from '../common/item/Item';
+import { Item } from '../common/item/item';
 import { Paginate } from '../common/paginate/Paginate';
-
 import { ContentPropsType } from '../content/Content';
 import './currency.scss';
 

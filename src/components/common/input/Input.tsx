@@ -8,7 +8,7 @@ type InputPropsType = {
 };
 
 export const Input = (props: InputPropsType) => {
-  const { id, priceUsd, onChangeValueInput } = props;
+  const { id, priceUsd } = props;
 
   return (
     <InputGroup className="mb-3">
