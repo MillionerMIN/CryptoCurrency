@@ -1,7 +1,20 @@
-@import 'assets/_variable.scss';
+@import 'assets/variable';
+
 @import 'assets/title';
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
 body {
+  min-width: 320px;
+  overflow-x: hidden;
   margin: 0;
   background: $px-bg;
   color: $px-text;
