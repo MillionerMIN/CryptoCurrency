@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import { Routing } from '../routing/Routing';
 import { Footer } from '../footer/Footer';
-import { MobHeader } from '../header/MobHeader';
+import { MobHeader } from '../header/Header';
 
 function App() {
   return (

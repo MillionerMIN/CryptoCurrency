@@ -3,62 +3,52 @@
 .cost-wallet {
   background: $px-white;
   box-shadow: 0px 4px 6px $px-skyBlue;
-  border-radius: 20px;
-
-  &_mr {
-    margin: 20px 0;
-    padding: 15px;
-  }
+  border-radius: 10px;
 
   &__wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    gap: 5px;
     height: 100%;
     background: $px-body;
     box-shadow: inset 0px 0px 8px 1px $px-shadow;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 10px;
   }
 
   &__balance {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    justify-content: space-between;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
     align-items: center;
   }
 
-  &__title {
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
-
   &__cost {
-    justify-self: end;
-    font-weight: 500;
-    font-size: 1.8rem;
     color: $px-green;
-  }
-
-  &__delete {
-    height: 100%;
   }
 
   &__coins {
     grid-column-start: 1;
     grid-column-end: 3;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 1.2rem;
+
   }
 
   &__group {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) 2fr 50px;
-    grid-auto-rows: auto;
+    grid-template: auto /repeat(2, 1fr) 2fr 50px;
     column-gap: 5px;
     row-gap: 10px;
     align-items: center;
     font-weight: 500;
-    font-size: 1.6rem;
     margin-bottom: 10px;
+    font-size: .9rem;
   }
 
   &__name-currency {
@@ -72,19 +62,27 @@
   &__cost-currency {
     justify-self: end;
   }
+
+  &__delete {
+    height: 100%;
+  }
 }
 
 .btn {
+  &-danger {
+    padding: 4px;
+  }
+
   &_delete {
     width: 100%;
-    height: 48px;
+    height: 100%;
     background: #A790C6;
-    border-radius: 10px;
     border-color: #A790C6;
-    color: $px-white;
-    font-size: 1.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
     font-weight: 500;
     text-transform: uppercase;
+    color: $px-white;
 
     &:hover {
       background: #61339c;
@@ -94,107 +92,69 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media screen and (min-width: 576px) {
   .cost-wallet {
+
+    &__title {
+      font-size: 1.6rem;
+    }
+
     &__cost {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
 
     &__group {
+      font-size: 1.2rem;
+    }
+  }
+
+  .btn {
+    &_delete {
+      border-radius: 8px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cost-wallet {
+    &_mr {
+      margin: 20px 0;
+      padding: 15px;
+    }
+
+    &__wrapper {
+      gap: 20px;
+      padding: 20px;
+    }
+
+    &__balance {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      justify-self: start;
+    }
+
+    &__cost {
+      font-size: 1.5rem;
+      justify-self: end;
+    }
+
+    &__group {
+      column-gap: 20px;
       font-size: 1.5rem;
     }
   }
 }
 
-@media (max-width: 992px) {
+@media screen and (min-width: 992px) {
   .cost-wallet {
-    border-radius: 10px;
-
-    &__title {
-      font-size: 1.4rem;
-    }
-
     &__cost {
-      font-size: 1.4rem;
-    }
-
-    &__group {
-      font-size: 1.3rem;
-    }
-  }
-
-  .btn {
-    &_delete {
-      width: 100%;
-      height: 100%;
-      font-size: 1.2rem;
-    }
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .cost-wallet {
-    &__wrapper {
-      gap: 10px;
-      padding: 10px;
-      border-radius: 10px;
-    }
-
-    &_mr {
-      margin: 0;
-      padding: 10px;
-    }
-
-    &__title {
-      font-size: 1.2rem;
-    }
-
-    &__cost {
-      font-size: 1.0rem;
-    }
-
-    &__group {
-      font-size: 1.0rem;
-    }
-  }
-
-  .btn {
-    &-danger {
-      padding: 4px;
-    }
-
-    &_delete {
-      height: 100%;
-      border-radius: 4px;
-      font-size: 0.8rem;
+      font-size: 1.8rem;
     }
   }
 }
 
-@media (max-width: 576px) {
-  .cost-wallet {
-    &_mr {
-      padding: 0;
-    }
-
-    // &__balance {
-    //   grid-template-columns: 1fr;
-    //   grid-template-rows: auto;
-    //   justify-items: center;
-    // }
-
-    // &__title {
-    //   font-size: 1.2rem;
-    // }
-
-    // &__cost {
-    //   font-size: 0.8rem;
-    // }
-
-    // &__group {
-    //   font-size: .9rem;
-    // }
-  }
-}
+@media screen and (min-width: 1200px) {}

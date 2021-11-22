@@ -4,7 +4,7 @@ import { getCostWallet, getCurrentsWallet } from '../../redux/selectors';
 import { AppRootStateType } from '../../redux/store';
 import { Wrapper } from '../common/wrapper/Wrapper';
 import Delete from '../../icons/other/delete.svg';
-import './mobileCostWallet.scss';
+import './costWallet.scss';
 import {
   CurrencyWalletType,
   deleteWallet,
