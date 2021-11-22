@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderLogo from '../../icons/digital-wallet.png';
 import { Socials } from '../socials/Socials';
-
 import './header.scss';
 
 const arrayItems = [
@@ -11,13 +10,15 @@ const arrayItems = [
   { name: 'About us', hash: '/about' },
 ];
 
-export const Header = () => {
+export const MobHeader = () => {
   const [click, setClick] = useState<boolean>(false);
   const handleClick = () => {
     setClick(!click);
   };
 
-  const clazz = click ? 'header header_open' : 'header';
+  const clazz = click
+    ? 'header header_position header_open'
+    : 'header header_position';
 
   const item = arrayItems.map((item) => (
     <Link
